@@ -9,4 +9,4 @@ class Task(models.Model):
 
     def __str__(self):
 
-        return "{}. {}".format(self.pk, self.title)
+        return "{}. {}".format(self.pk, self.description)
