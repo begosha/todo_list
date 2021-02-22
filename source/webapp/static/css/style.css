@@ -1,0 +1,76 @@
+body{
+	font-family: 'Roboto', sans-serif;
+}
+.navbar-nav {
+	color: #3b404f;
+	font-size: 15px;
+	font-weight: 500;
+}
+.carousel-indicators li{
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #fff;
+	border: 2px;
+	opacity: 1;
+}
+.carousel-indicators .active{
+	width: 12px;
+	height: 12px;
+	background: #fab702;
+}
+.carousel-caption {
+	top: 60%;
+	transform: translateY(-50%);
+	bottom: initial;
+}
+.carousel-caption h1{
+	font-size: 64px;
+	font-weight: 900;
+	color: #fff;
+}
+.carousel-caption h5 {
+	font-size: 64px;
+	font-weight: 900;
+	color: #fff;
+}
+.carousel-caption p{
+	font-size: 18px;
+	font-weight: 500;
+	color: #fff;
+}
+.game-block{
+	padding-top: 50px;
+	text-align: center;
+}
+
+	.game-block h2{
+		font-size: 34px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	input {
+	  border: 2px solid #6BB0BC;
+	  border-radius: 4px;
+	}
+	input[type=submit]{
+	  background-color: #6BB0BC;
+	  border: none;
+	  color: white;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}
+		.result h3 {
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #6BB0BC;
+		}
+		.result p {
+			font-size: 25px;
+			font-weight: bold;
+		}
+.game_steps h1 {
+	font-weight: bold;
+	color: #6BB0BC;
+}
