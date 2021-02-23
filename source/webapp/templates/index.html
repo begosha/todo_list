@@ -11,17 +11,43 @@
 
 </head>
 <body>
-    <h1>Tasks</h1>
 
-{% for task in tasks %}
-
-    <h2>{{ task.description }}</h2>
-
-    <p><a href="#">Подробнее...</a></p>
-
-    <hr>
-
-{% endfor %}
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Task Tracker</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Add Task</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+    <div class="header-info-block">
+        <div class="container">
+            <h1>Tasks Tracker</h1>
+            <p>Here you can see, add, and delete your tasks. I'm your task manager!</p>
+        </div>
+        </div>
+    {% for task in tasks %}
+    <div class="task">
+        <div class="container">
+            <h2>{{ task.description }}</h2>
+            <p>
+                <a href="/task/?pk={{ task.pk }}">See More...</a>
+            </p>
+            <hr>
+        </div>
+    </div>
+    {% endfor %}
     <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
