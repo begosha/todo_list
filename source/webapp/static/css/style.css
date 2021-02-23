@@ -24,7 +24,34 @@ body{
 	margin: 50px 0;
 	color: #6B87BC;
 }
+	.task h1 {
+		color: #000000;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 	.task h2{
 		text-transform: uppercase;
 		font-weight: bold;
+	}
+.task-view {
+	border: 3px solid #6B87BC;;
+	text-align: center;
+	margin: 50px 0;
+	padding: 50px;
+	color: #6B87BC;
+}
+	.task-view h1 {
+		color: #000000;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-bottom: 50px;
+	}
+	.task-view h2{
+		color: #6B87BC;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.task-view p {
+		text-transform: capitalize;
+		color: #424242;
 	}

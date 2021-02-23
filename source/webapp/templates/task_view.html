@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>To Do List</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="task-view">
+            <h1>Task:</h1>
+            <h2>{{ task.description }}</h2>
+            <p> Status: {{ task.status }}</p>
+            <p>Completion date: {{ task.completion_date }}</p>
+            <a class="btn btn-primary" href="#" role="button">Delete</a>
+            <a class="btn btn-primary" href="/" role="button">Go Back</a>
+        </div>
+    </div>
+
+
+</body>
+</html>

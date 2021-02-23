@@ -8,4 +8,9 @@ def index_view (request):
     }
     return render(request, 'index.html', context)
 
+def task_view(request):
+    task_id = request.GET.get('pk')
+    task = Task.objects.get(pk=task_id)
+    context = {'task': task}
+    return render(request, 'task_view.html', context)
 
