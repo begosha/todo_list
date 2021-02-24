@@ -11,6 +11,8 @@ def index_view (request):
 def task_view(request):
     task_id = request.GET.get('pk')
     task = Task.objects.get(pk=task_id)
+    task.status = (task.status).replace('_', ' ')
     context = {'task': task}
+
     return render(request, 'task_view.html', context)
 
