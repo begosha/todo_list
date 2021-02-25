@@ -23,6 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', webapp_views.index_view),
     path('task/', webapp_views.task_view),
-    path('add/', webapp_views.task_add_view),
-    # path('add/task/', webapp_views.task_view)
+    path('add/', webapp_views.task_add_view)
 ]

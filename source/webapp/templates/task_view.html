@@ -15,7 +15,10 @@
             <h2>{{ task.description }}</h2>
             <p> Status: {{ task.status }}</p>
             <p>Completion date: {{ task.completion_date }}</p>
-            <a class="btn btn-outline-info" href="#" role="button">Delete</a>
+            <form action="/task/?pk={{ task.pk }}" method="POST">
+                {% csrf_token %}
+                 <input class="btn btn-outline-info" type="submit" value="Delete">
+            </form>
             <a class="btn btn-outline-info" href="/" role="button">Go Back</a>
         </div>
     </div>
