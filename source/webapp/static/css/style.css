@@ -22,7 +22,7 @@ body{
 	}
 .task {
 	margin: 50px 0;
-	color: #6B87BC;
+	color: #5bc0de;
 }
 	.task h1 {
 		color: #000000;
@@ -34,11 +34,11 @@ body{
 		font-weight: bold;
 	}
 .task-view {
-	border: 3px solid #6B87BC;;
+	border: 3px solid #5bc0de;
 	text-align: center;
 	margin: 50px 0;
 	padding: 50px;
-	color: #6B87BC;
+	color: #5bc0de;
 }
 	.task-view h1 {
 		color: #000000;
@@ -47,11 +47,21 @@ body{
 		margin-bottom: 50px;
 	}
 	.task-view h2{
-		color: #6B87BC;
+		color: #5bc0de;
 		text-transform: uppercase;
 		font-weight: bold;
 	}
 	.task-view p {
 		text-transform: capitalize;
 		color: #424242;
+	}
+.task-form {
+	border: 3px solid #5bc0de;
+	text-align: center;
+	margin: 50px 0;
+	padding: 50px;
+	color: #5bc0de;
+}
+	.task-form label{
+		font-weight: bold;
 	}
