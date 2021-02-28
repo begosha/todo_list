@@ -27,9 +27,10 @@ def task_add_view(request, *args, **kwargs):
         return render(request, 'task_add_view.html')
     elif request.method == 'POST':
         description = request.POST.get('description')
+        details = request.POST.get('details')
         status = request.POST.get('status')
         completion_date = request.POST.get('completion_date')
-        task = Task.objects.create(description=description, status=status, completion_date=completion_date)
+        task = Task.objects.create(description=description, details=details, status=status, completion_date=completion_date)
         context = {
             'task': task
         }
