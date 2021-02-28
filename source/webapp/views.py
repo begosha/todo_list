@@ -1,27 +1,28 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from webapp.models import Task
+from django.urls import reverse
 
 def index_view (request):
     tasks = Task.objects.all()
     context = {
         'tasks': tasks
     }
+    url = reverse('index')
     return render(request, 'index.html', context)
 
-def task_view(request):
+def task_view(request, pk):
     if request.method == 'GET':
-        task_id = request.GET.get('pk')
-        task = Task.objects.get(pk=task_id)
+        task = Task.objects.get(pk=pk)
         context = {'task': task}
         task.status = task.status.replace('_', ' ')
         return render(request, 'task_view.html', context)
     elif request.method == 'POST':
         task_id = request.GET.get('pk')
-        task = get_object_or_404(Task, pk=task_id)
+        task = get_object_or_404(Task, pk=pk)
         task.delete()
-        return redirect('/')
+        return redirect('index')
 
-def task_add_view(request):
+def task_add_view(request, *args, **kwargs):
     if request.method == 'GET':
         return render(request, 'task_add_view.html')
     elif request.method == 'POST':
@@ -32,5 +33,5 @@ def task_add_view(request):
         context = {
             'task': task
         }
-    return render(request, 'task_view.html', context)
+        return redirect('task', pk=task.pk)
 
