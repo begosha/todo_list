@@ -34,5 +34,6 @@ def task_add_view(request, *args, **kwargs):
         context = {
             'task': task
         }
-        return redirect('task', pk=task.pk)
+        url = reverse('task', kwargs={'pk': task.pk})
+        return redirect(url)
 
