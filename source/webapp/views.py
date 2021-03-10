@@ -39,31 +39,25 @@ def task_add_view(request):
             return redirect('task', pk=task.id)  
         return render(request, 'task_add_view.html', context={'form': form}) 
 
-        # description = request.POST.get('description')
-        # details = request.POST.get('details')
-        # status = request.POST.get('status')
-        # completion_date = request.POST.get('completion_date')
-        # task = Task.objects.create(description=description, details=details, status=status, completion_date=completion_date)
-        # context = {
-        #     'task': task
-        # }
-        # url = reverse('task', kwargs={'pk': task.pk})
-        # return redirect(url)
+def task_update_view(request, pk):
+   
+    task = get_object_or_404(Task, id=pk)  
 
-def guest_add_view(request):
-    if request.method == "GET": 
-        form = GuestForm()
-        return render(request, 'guest_add_view.html', context={'form': form})
-    elif request.method == "POST": 
-        form = GuestForm(data=request.POST)  
+    if request.method == 'GET':  
+        form = TaskForm(initial={ 
+            'description': guest.description,
+            'details': guest.details,
+            'status': guest.status,
+            'completion_date': guest.completion_date
+        })
+        return render(request, 'task_update_view.html', context={'form': form, 'task': task})  
+    elif request.method == 'POST':  
+        form = TaskForm(data=request.POST)  
         if form.is_valid():  
-            guest = Guest.objects.create(
-                name=form.cleaned_data.get('name'),
-                email=form.cleaned_data.get('email'),
-                booking_details=form.cleaned_data.get('booking_details')
-            )
-            return redirect('guest', pk=guest.id)  
-        return render(request, 'guest_add_view.html', context={'form': form}) 
+            task.description=form.cleaned_data.get('description'),
+            task.details=form.cleaned_data.get('details'),
+            task.status=form.cleaned_data.get('status'),
+            task.completion_date=form.cleaned_data.get('completion_date')
+            return redirect('task', pk=task.id)   
 
-
-
+        return render(request, 'task_update_view.html', context={'form': form, 'task': task}) 
