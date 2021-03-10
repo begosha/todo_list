@@ -6,29 +6,8 @@
 	</div>
 
 	<div class="task-form">
-		<form method="POST" action="{% url 'task_add' %}">
-			{% csrf_token %}
-			<label for="description">Description of a Task:</label>
-			<input type="text" id="description" name="description">
-			<br>
-			<label for="details">Details of a Task:</label>
-			<input type="text" id="details" name="details">
-			<br>
-			<label for="status">Choose status of a Task:</label>
-			<select id="status" name="status" >
-				<option value='new'>New</option>
-				<option value='in_progress'>in Progress</option>
-				<option value='done'>Done</option>
-			</select>
-			<br>
-			<label for="Date of Completion">
-				Enter the Date of Completion:
-				<input type="date" name="completion_date" value="2021-02-01" id='Date of Completion'>
-			</label>
-			<br>
-			<input class="btn btn-outline-info" type="submit" value="Submit">
-			<a class="btn btn-outline-info" href="{% url 'index' %}" role="button">Go Back</a>
+		<form action="/add/" method="POST">
+			{% include "task_form.html" with button_text="ADD" %}
 		</form>
-		<br>
 	</div>
 {% endblock %}
