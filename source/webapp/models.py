@@ -8,6 +8,11 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
 
+    class Meta:
+        db_table = 'tasks'
+        verbose_name = 'Task'
+        verbose_name_plural = 'Tasks'
+        
     def __str__(self):
 
         return "{}. {}".format(self.pk, self.description)
