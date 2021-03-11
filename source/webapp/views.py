@@ -12,16 +12,11 @@ def index_view (request):
     return render(request, 'index.html', context)
 
 def task_view(request, pk):
-    if request.method == 'GET':
-        task = Task.objects.get(pk=pk)
-        context = {'task': task}
-        task.status = task.status.replace('_', ' ')
-        return render(request, 'task_view.html', context)
-    elif request.method == 'POST':
-        task_id = request.GET.get('pk')
-        task = get_object_or_404(Task, pk=pk)
-        task.delete()
-        return redirect('index')
+    task = Task.objects.get(pk=pk)
+    context = {'task': task}
+    task.status = task.status.replace('_', ' ')
+    return render(request, 'task_view.html', context)
+  
 
 def task_add_view(request):
     if request.method == 'GET':
@@ -45,10 +40,10 @@ def task_update_view(request, pk):
 
     if request.method == 'GET':  
         form = TaskForm(initial={ 
-            'description': guest.description,
-            'details': guest.details,
-            'status': guest.status,
-            'completion_date': guest.completion_date
+            'description': task.description,
+            'details': task.details,
+            'status': task.status,
+            'completion_date': task.completion_date
         })
         return render(request, 'task_update_view.html', context={'form': form, 'task': task})  
     elif request.method == 'POST':  
