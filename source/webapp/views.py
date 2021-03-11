@@ -61,3 +61,8 @@ def task_update_view(request, pk):
             return redirect('task', pk=task.id)   
 
         return render(request, 'task_update_view.html', context={'form': form, 'task': task}) 
+
+def task_delete_view(request, pk):
+    task = get_object_or_404(Task, id=pk)
+    task.delete()
+    return redirect('index')
