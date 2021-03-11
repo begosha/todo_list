@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', webapp_views.index_view, name='index'),
     path('task/<int:pk>/', webapp_views.task_view, name='task'),
-    path('add/', webapp_views.task_add_view, name='task_add')
+    path('add/', webapp_views.task_add_view, name='task_add'),
+    path('<int:pk>/update', webapp_views.task_update_view, name='task-update'),
+    path('<int:pk>/delete', webapp_views.task_delete_view, name='task-delete')
 ]

@@ -1,6 +1,6 @@
 from django import forms
 
-from article.models import Task
+from webapp.models import Task
 
 
 class TaskForm(forms.ModelForm):

@@ -20,16 +20,16 @@ body{
 		text-transform: uppercase;
 		font-weight: bold;
 	}
-.task {
+.guest {
 	margin: 50px 0;
 	color: #5bc0de;
 }
-	.task h1 {
+	.guest h1 {
 		color: #000000;
 		text-transform: uppercase;
 		font-weight: bold;
 	}
-	.task h2{
+	.guest h2{
 		text-transform: uppercase;
 		font-weight: bold;
 	}
